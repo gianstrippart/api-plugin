@@ -1,0 +1,30 @@
+td, th{
+    text-align: left!important;
+    min-width: 27px;
+    padding: 3px!important;
+}
+p, a{
+    font-size: 16px!important;
+    text-decoration: none!important;
+}
+.render-area{
+    border: 1px solid #000;
+    min-height: 300px; 
+    padding: 20px;
+}
+.title{
+    text-align: center;
+}
+.placeholder-t{
+    font-style: italic; 
+    text-align: center; 
+    margin-top: 35%;
+}
+#main-container{
+    width: 20%;
+}
+@media (max-width: 768px) {
+    #main-container{
+      width: 96%;
+    }
+  }
