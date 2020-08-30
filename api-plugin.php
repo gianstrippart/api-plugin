@@ -34,6 +34,10 @@ function apiplugin_main(){
     $server = 'http://127.0.0.1:8000';
     $url = '/'.get_option('apiplugin_max_per_call').'/links';
     $response = wp_remote_get($server.$url);
+    if(is_wp_error($response)){
+        echo '<h2 class=""><b> The plugin is unable to reach the API, please, try again later or make sure server is available.</b></h2>';
+        return false;
+    }
     $body = wp_remote_retrieve_body($response);
     echo '<div id="main-container">';
     echo '<h1 class="title"> API Plugin </h1>';
@@ -44,6 +48,10 @@ function apiplugin_main(){
 
     $url = '/'.get_option('apiplugin_max_per_call').'/browsers';
     $response = wp_remote_get($server.$url);
+    if(is_wp_error($response)){
+        echo '<h2 class=""><b> The plugin is unable to reach the API, please, try again later or make sure server is available.</b></h2>';
+        return false;
+    }
     $body = wp_remote_retrieve_body($response);
     echo '<div class="render-area">
           <p class=""><b>Top '.get_option('apiplugin_max_per_call').' visits by browser: </b></p>
